@@ -1,0 +1,102 @@
+[
+  {
+    "type": "function",
+    "name": "addEvent",
+    "inputs": [
+      { "name": "code", "type": "string", "internalType": "string" },
+      { "name": "details", "type": "string", "internalType": "string" },
+      { "name": "latitude", "type": "int32", "internalType": "int32" },
+      { "name": "longitude", "type": "int32", "internalType": "int32" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "addEventsBatch",
+    "inputs": [
+      { "name": "codes", "type": "string[]", "internalType": "string[]" },
+      { "name": "info", "type": "string", "internalType": "string" },
+      { "name": "latitude", "type": "int32", "internalType": "int32" },
+      { "name": "longitude", "type": "int32", "internalType": "int32" }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "getHistory",
+    "inputs": [{ "name": "code", "type": "string", "internalType": "string" }],
+    "outputs": [
+      {
+        "name": "",
+        "type": "tuple[]",
+        "internalType": "struct Traceability.Event[]",
+        "components": [
+          {
+            "name": "timestamp",
+            "type": "uint256",
+            "internalType": "uint256"
+          },
+          {
+            "name": "organization",
+            "type": "address",
+            "internalType": "address"
+          },
+          { "name": "details", "type": "string", "internalType": "string" },
+          { "name": "latitude", "type": "int32", "internalType": "int32" },
+          { "name": "longitude", "type": "int32", "internalType": "int32" }
+        ]
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "getOrganizationName",
+    "inputs": [{ "name": "org", "type": "address", "internalType": "address" }],
+    "outputs": [{ "name": "", "type": "string", "internalType": "string" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "organizationNames",
+    "inputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "outputs": [{ "name": "", "type": "string", "internalType": "string" }],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "registerOrganization",
+    "inputs": [
+      { "name": "name", "type": "string", "internalType": "string" },
+      {
+        "name": "role",
+        "type": "uint8",
+        "internalType": "enum Traceability.Role"
+      }
+    ],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  },
+  {
+    "type": "function",
+    "name": "roles",
+    "inputs": [{ "name": "", "type": "address", "internalType": "address" }],
+    "outputs": [
+      {
+        "name": "",
+        "type": "uint8",
+        "internalType": "enum Traceability.Role"
+      }
+    ],
+    "stateMutability": "view"
+  },
+  {
+    "type": "function",
+    "name": "unregisterOrganization",
+    "inputs": [],
+    "outputs": [],
+    "stateMutability": "nonpayable"
+  }
+]
