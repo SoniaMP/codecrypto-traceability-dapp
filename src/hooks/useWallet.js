@@ -42,7 +42,7 @@ export const useWallet = (contractAbi, contractAddress) => {
         setAccount(null);
         setContract(null);
       } else {
-        const sgn = provider.getSigner(accounts[0]);
+        const sgn = await provider.getSigner(accounts[0]);
         setAccount(accounts[0]);
         setContract(new ethers.Contract(contractAddress, contractAbi, sgn));
       }
